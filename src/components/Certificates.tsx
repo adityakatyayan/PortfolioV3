@@ -72,12 +72,7 @@ export function Certificates() {
                       </button>
                     )}
                     {cert.verifyUrl && (
-                      
-                        href={cert.verifyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 glass rounded-full px-4 py-2 text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
-                      >
+                      <a className="flex-1 glass rounded-full px-4 py-2 text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-colors" href={cert.verifyUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink size={14} /> Verify
                       </a>
                     )}
