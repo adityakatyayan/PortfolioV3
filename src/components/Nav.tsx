@@ -51,7 +51,6 @@ export function Nav() {
           scrolled ? 'shadow-2xl' : ''
         }`}
       >
-        {/* Brand mark */}
         <button
           onClick={() => go('home')}
           className="hidden md:flex items-center justify-center h-9 w-9 rounded-full bg-gradient-to-br from-purple-400 via-blue-400 to-pink-400 text-black font-semibold text-sm mr-1"
@@ -60,7 +59,6 @@ export function Nav() {
           AK
         </button>
 
-        {/* Desktop links */}
         <nav className="hidden md:flex items-center gap-1">
           {sections.map((s) => (
             <button
@@ -86,7 +84,6 @@ export function Nav() {
           ))}
         </nav>
 
-        {/* Mobile: brand + label */}
         <div className="md:hidden flex items-center gap-2">
           <button
             onClick={() => go('home')}
@@ -125,7 +122,6 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Mobile dropdown */}
       {open && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -142,3 +138,9 @@ export function Nav() {
             >
               {s.label}
             </button>
+          ))}
+        </motion.div>
+      )}
+    </motion.header>
+  );
+}
