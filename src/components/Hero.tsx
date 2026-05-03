@@ -87,7 +87,6 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.button
         onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity"
