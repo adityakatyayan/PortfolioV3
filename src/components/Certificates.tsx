@@ -22,12 +22,17 @@ export function Certificates() {
   }, [active]);
 
   return (
-    <section className="relative py-24 px-6">
+    <section id="certificates" className="relative py-24 px-6 scroll-mt-24">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
           <p className="text-sm tracking-[0.3em] uppercase opacity-60">Credentials</p>
           <h2 className="text-3xl md:text-4xl font-light mt-2">Certificates</h2>
-        </div>
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {certificates.map((cert, i) => (
@@ -41,11 +46,11 @@ export function Certificates() {
               <GlassCard glow={i === 0} className="h-full">
                 <div className="p-6 flex flex-col h-full">
                   {cert.image ? (
-                    <div className="aspect-[4/3] rounded-xl overflow-hidden bg-white/5 mb-4">
+                    <div className="aspect-[4/3] rounded-xl overflow-hidden bg-white mb-4">
                       <img
                         src={cert.image}
                         alt={cert.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   ) : (
@@ -54,7 +59,7 @@ export function Certificates() {
                     </div>
                   )}
 
-                  <h3 className="font-medium leading-tight mb-1">{cert.title}</h3>
+                  <h3 className="font-medium leading-tight mb-1 line-clamp-2">{cert.title}</h3>
                   <p className="text-xs opacity-60 mb-4">{cert.issuer}</p>
 
                   <div className="flex gap-2 mt-auto">
@@ -67,7 +72,7 @@ export function Certificates() {
                       </button>
                     )}
                     {cert.verifyUrl && (
-                      <a
+                      
                         href={cert.verifyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -93,7 +98,7 @@ export function Certificates() {
             exit={{ opacity: 0 }}
             onClick={() => setActive(null)}
           >
-            <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
+            <div className="absolute inset-0 bg-black/80 backdrop-blur-md" />
             <motion.div
               className="relative max-w-4xl w-full max-h-[90vh] glass rounded-2xl overflow-hidden"
               initial={{ scale: 0.9, y: 20 }}
@@ -110,9 +115,9 @@ export function Certificates() {
                 <X size={18} />
               </button>
               <div className="p-6">
-                <h3 className="text-xl font-medium mb-1">{active.title}</h3>
+                <h3 className="text-xl font-medium mb-1 pr-12">{active.title}</h3>
                 <p className="text-sm opacity-60 mb-4">{active.issuer}</p>
-                <div className="rounded-xl overflow-hidden bg-white/5 max-h-[70vh] overflow-y-auto">
+                <div className="rounded-xl overflow-hidden bg-white max-h-[70vh] overflow-y-auto">
                   <img src={active.image} alt={active.title} className="w-full h-auto" />
                 </div>
               </div>
