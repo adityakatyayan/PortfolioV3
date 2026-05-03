@@ -18,7 +18,6 @@ export function Experience() {
         </motion.div>
 
         <div className="relative">
-          {/* Vertical timeline rail */}
           <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
 
           <div className="space-y-8">
@@ -31,13 +30,11 @@ export function Experience() {
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="relative pl-16 md:pl-24"
               >
-                {/* Timeline dot */}
                 <div className="absolute left-6 md:left-8 top-7 -translate-x-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_20px_rgba(168,85,247,0.8)] z-10" />
 
                 <GlassCard>
                   <div className="p-5 md:p-6">
                     <div className="flex items-start gap-4 mb-4">
-                      {/* Uniform white logo tile */}
                       <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center overflow-hidden flex-shrink-0 shadow-lg">
                         <img
                           src={exp.logo}
@@ -65,3 +62,14 @@ export function Experience() {
                           <span>{b}</span>
                         </li>
                       ))}
+                    </ul>
+                  </div>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
