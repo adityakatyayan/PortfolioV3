@@ -41,24 +41,13 @@ export function Hero() {
             {profile.tagline}
           </p>
           <div className="flex flex-wrap gap-3">
-            
-              href={`mailto:${profile.email}`}
-              className="glass rounded-full px-5 py-3 text-sm flex items-center gap-2 hover:bg-white/10 transition-colors"
-            >
+            <a className="glass rounded-full px-5 py-3 text-sm flex items-center gap-2 hover:bg-white/10 transition-colors" href={`mailto:${profile.email}`}>
               <Mail size={14} /> Email
             </a>
-            
-              href={profile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass rounded-full px-5 py-3 text-sm flex items-center gap-2 hover:bg-white/10 transition-colors"
-            >
+            <a className="glass rounded-full px-5 py-3 text-sm flex items-center gap-2 hover:bg-white/10 transition-colors" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
               <Linkedin size={14} /> LinkedIn
             </a>
-            
-              href={`tel:${profile.phone.replace(/\s/g, '')}`}
-              className="glass rounded-full px-5 py-3 text-sm flex items-center gap-2 hover:bg-white/10 transition-colors"
-            >
+            <a className="glass rounded-full px-5 py-3 text-sm flex items-center gap-2 hover:bg-white/10 transition-colors" href={`tel:${profile.phone.replace(/\s/g, '')}`}>
               <Phone size={14} /> Call
             </a>
           </div>
