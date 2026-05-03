@@ -5,12 +5,17 @@ import { GlassCard } from './ui/GlassCard';
 
 export function Education() {
   return (
-    <section className="relative py-24 px-6">
+    <section id="education" className="relative py-24 px-6 scroll-mt-24">
       <div className="max-w-5xl mx-auto">
-        <div className="mb-12">
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
           <p className="text-sm tracking-[0.3em] uppercase opacity-60">Scholastics</p>
           <h2 className="text-3xl md:text-4xl font-light mt-2">Education</h2>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {education.map((edu, i) => (
